@@ -42,3 +42,6 @@ WORKDIR /home/static/webdev_ca1-main
 
 # httpd.conf 
 COPY httpd.conf .
+
+# Issuing commands to run when container is created
+CMD ["/busybox", "httpd", "-f", "-v", "-p", "8080", "-c", "httpd.conf"]
