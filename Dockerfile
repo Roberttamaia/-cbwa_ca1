@@ -12,3 +12,13 @@ RUN wget https://github.com/Roberttamaia/webdev_ca1/archive/main.tar.gz \
   && tar xf main.tar.gz \
   && rm main.tar.gz \
   && mv /webdev_ca1-main /home/static
+
+# Changing working directory
+WORKDIR /busybox
+
+# Installing a custom version of BusyBox
+COPY .config .
+RUN make && make install
+
+# Creating a new user to secure running commands
+RUN adduser -D static 
