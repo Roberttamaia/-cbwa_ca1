@@ -34,3 +34,6 @@ COPY --from=builder /etc/passwd /etc/passwd
 COPY --from=builder /busybox/_install/bin/busybox /
 # Copying the content of Web CA1 to the scratch image
 COPY --from=builder /home/static /home/static
+
+# Switching to our non-root user and their working directory
+USER static
