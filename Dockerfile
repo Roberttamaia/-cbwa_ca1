@@ -22,3 +22,6 @@ RUN make && make install
 
 # Creating a new user to secure running commands
 RUN adduser -D static 
+
+# Switching to the scratch image
+FROM scratch
