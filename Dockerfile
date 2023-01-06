@@ -16,8 +16,10 @@ RUN wget https://github.com/Roberttamaia/webdev_ca1/archive/master.tar.gz \
 # Changing working directory
 WORKDIR /busybox
 
+RUN apk add --update linux-headers;
 # Installing a custom version of BusyBox
 COPY .config .
+
 RUN make && make install
 
 
